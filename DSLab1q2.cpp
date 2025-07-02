@@ -1,3 +1,6 @@
+
+/*2. Write a program that takes two or more sets as input and produces their
+Cartesian product as output.*/
 #include<iostream>
 using namespace std;
 
