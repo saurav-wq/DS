@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    cout << "P (Hound Dog) | Q (Howl) | P -> Q | ¬Q | ¬P | (P->Q) ? ¬Q | Conclusion: ¬P\n";
+    cout << "P (Hound Dog) | Q (Howl) | P -> Q | ï¿½Q | ï¿½P | (P->Q) ? ï¿½Q | Conclusion: ï¿½P\n";
     cout << "---------------------------------------------------------------\n";
 
     for (int P = 0; P <= 1; P++) {
