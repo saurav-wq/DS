@@ -1,29 +1,36 @@
 /*1. Write a program that takes two or more sets as input and produces set
 operations like union, intersection, difference and symmetric difference as
 its output*/
-#include<iostream>
+
+#include <iostream>
 using namespace std;
 
-int main(){
-	int A[10],B[10],n1,n2;
-	cout<<"Enter the no.of elements of A: ";
-	cin>>n1;
-	cout<<"Enter the elements of A: "<<endl;
-	for(int i=0;i<n1;i++){
-		cin>>A[i];
-	}
-	cout<<"Enter the no.of elemets of B: ";
-	cin>>n2;
-	cout<<"Enter the elements of B:"<<endl;
-	for(int i=0;i<n2;i++){
-		cin>>B[i];
-	}
+int main() {
+    int A[10] = {0}, B[10] = {0}, n1, n2;
+    cout << "Enter the number of elements of A (max 10): ";
+    cin >> n1;
+    while (n1 < 1 || n1 > 10) {
+        cout << "Invalid input. Enter the number of elements of A (1-10): ";
+        cin >> n1;
+    }
+    cout << "Enter the elements of A: ";
+    for (int i = 0; i < n1; i++) {
+        cin >> A[i];
+    }
+    cout << "Enter the number of elements of B (max 10): ";
+    cin >> n2;
+    while (n2 < 1 || n2 > 10) {
+        cout << "Invalid input. Enter the number of elements of B (1-10): ";
+        cin >> n2;
+    }
+    cout << "Enter the elements of B: ";
+    for (int i = 0; i < n2; i++) {
+        cin >> B[i];
+    }
 
     // Union
     cout << "\nUnion: ";
-    for (int i = 0; i < n1; i++) {
-        cout << A[i] << " ";
-    }
+    for (int i = 0; i < n1; i++) cout << A[i] << " ";
     for (int i = 0; i < n2; i++) {
         bool found = false;
         for (int j = 0; j < n1; j++) {
@@ -32,9 +39,7 @@ int main(){
                 break;
             }
         }
-        if (!found) {
-            cout << B[i] << " ";
-        }
+        if (!found) cout << B[i] << " ";
     }
 
     // Intersection
@@ -58,9 +63,7 @@ int main(){
                 break;
             }
         }
-        if (!found) {
-            cout << A[i] << " ";
-        }
+        if (!found) cout << A[i] << " ";
     }
 
     // Symmetric Difference
@@ -74,9 +77,7 @@ int main(){
                 break;
             }
         }
-        if (!found) {
-            cout << A[i] << " ";
-        }
+        if (!found) cout << A[i] << " ";
     }
     // B - A
     for (int i = 0; i < n2; i++) {
@@ -87,12 +88,9 @@ int main(){
                 break;
             }
         }
-        if (!found) {
-            cout << B[i] << " ";
-        }
+        if (!found) cout << B[i] << " ";
     }
 
     cout << endl;
     return 0;
 }
-
